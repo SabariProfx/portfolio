@@ -57,7 +57,6 @@ export default function Hero() {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Sabarinathan
             </motion.h1>
