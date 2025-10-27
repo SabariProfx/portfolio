@@ -1,100 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sabarinathan — Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <h1 class="brand">Sabarinathan</h1>
-        <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#timeline">Timeline</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="container">
-          <h2>Hi, I'm Sabarinathan</h2>
-          <p class="lead">B.Tech (3rd year) — Computer Science Engineering, SRMIST Chennai</p>
-          <p>I build web projects, solve algorithms and contribute to open-source.</p>
-          <p><a class="btn" href="#projects">See my work</a></p>
-        </div>
-      </section>
-
-      <section id="about" class="about container">
-        <h3>About me</h3>
-        <p>
-          I'm a third-year Computer Science Engineering student at SRMIST Chennai. I enjoy
-          web development, competitive programming, and creating small open-source tools.
-        </p>
-        <ul>
-          <li>Education: B.Tech in Computer Science (3rd year) — SRMIST Chennai</li>
-          <li>Interests: Web development, algorithms, open-source</li>
-        </ul>
-      </section>
-
-      <section id="projects" class="projects container">
-        <h3>Projects</h3>
-        <p>Here are some of the projects I've built:</p>
-        <div class="project-grid">
-          <article class="project-card">
-            <h4>Real-Time Price Tracker</h4>
-            <p>A web application that tracks and compares prices in real-time across Amazon and Flipkart, helping users find the best deals.</p>
-          </article>
-          <article class="project-card">
-            <h4>Warehouse Management System</h4>
-            <p>An online system for maintaining and managing warehouse operations for dairy products, including inventory tracking and order processing.</p>
-          </article>
-          <article class="project-card">
-            <h4>Attendance Management System</h4>
-            <p>A digital solution for tracking and managing worker attendance, streamlining HR processes and generating automated reports.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="timeline" class="timeline container">
-        <h3>Education & Certifications</h3>
-        <ul class="timeline-list">
-          <li><strong>2023</strong> — Completed Higher Secondary School</li>
-          <li><strong>August 2023</strong> — Joined SRMIST Chennai, B.Tech in Computer Science Engineering</li>
-          <li><strong>March 2024</strong> — Basic Java Programming Language (Oracle)</li>
-          <li><strong>September 2024</strong> — SQL and Relational Databases (Cognitive Classes)</li>
-          <li><strong>March 2025</strong> — Machine Learning in Python (Simplilearn)</li>
-          <li><strong>August 2025</strong> — Participated in Smart India Hackathon (SIH)</li>
-          <li><strong>October 2025</strong> — Full Stack Development (Simplilearn)</li>
-        </ul>
-      </section>
-
-      <section id="contact" class="contact container">
-        <h3>Contact</h3>
-        <p>Feel free to reach out:</p>
-        <p>
-          <strong>Email:</strong> <a href="mailto:sabariprofessional1@gmail.com">sabariprofessional1@gmail.com</a><br>
-          <strong>Phone:</strong> +91 8124402853
-        </p>
-        <p>
-          <a href="https://www.linkedin.com/in/sabarinathan-s-543a8828a" target="_blank">LinkedIn</a> • 
-          <a href="https://github.com/SabariProfx" target="_blank">GitHub</a>
-        </p>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <small>© <span id="year"></span> Sabarinathan — Built with HTML & CSS</small>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
