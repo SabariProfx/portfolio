@@ -23,7 +23,7 @@ export default function Hero() {
                 <img 
                   src="/profile.jpg" 
                   alt="Sabarinathan" 
-                  className="w-full h-full object-cover grayscale-[30%]"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>

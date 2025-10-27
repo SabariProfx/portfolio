@@ -26,15 +26,14 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-[#0a0e1a]/95 backdrop-blur-xl shadow-lg border-b border-white/5' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.a
             href="#"
-            className="text-2xl font-bold gradient-text"
-            whileHover={{ scale: 1.05 }}
+            className="text-2xl font-bold gradient-text transition-all duration-300"
           >
             Sabarinathan
           </motion.a>
@@ -45,8 +44,7 @@ export default function Navbar() {
               <motion.a
                 key={index}
                 href={link.href}
-                className="text-gray-300 hover:text-primary transition-colors font-medium"
-                whileHover={{ scale: 1.1, y: -2 }}
+                className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
                 whileTap={{ scale: 0.95 }}
               >
                 {link.label}

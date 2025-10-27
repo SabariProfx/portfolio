@@ -57,8 +57,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.4 + index * 0.2 }}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="glass p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 animate-float"
+                className="glass-minimal p-8 rounded-2xl transition-all duration-500 animate-float border-elegant hover-theme-purple"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="text-primary mb-6">{skill.icon}</div>

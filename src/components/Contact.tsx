@@ -17,8 +17,19 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    
+    // Create Gmail compose URL with pre-filled data
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=sabariprofessional1@gmail.com&su=${encodeURIComponent(`Message from ${formData.name}`)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    
+    // Open Gmail in new tab
+    window.open(gmailURL, '_blank');
+    
+    // Optionally reset form
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
   };
 
   const contactInfo = [
@@ -26,7 +37,7 @@ export default function Contact() {
       icon: <Mail size={24} />,
       label: 'Email',
       value: 'sabariprofessional1@gmail.com',
-      link: 'mailto:sabariprofessional1@gmail.com',
+      link: 'https://mail.google.com/mail/?view=cm&fs=1&to=sabariprofessional1@gmail.com',
     },
     {
       icon: <Phone size={24} />,
@@ -82,8 +93,7 @@ export default function Contact() {
                     href={info.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ x: 4 }}
-                    className="flex items-center gap-4 glass-minimal p-4 rounded-lg hover:bg-white/5 transition-all duration-300 group border-elegant"
+                    className="flex items-center gap-4 glass-minimal p-4 rounded-lg transition-all duration-500 group border-elegant hover-theme-purple"
                   >
                     <div className="text-white/60 group-hover:text-white/90 transition-colors">
                       {info.icon}
@@ -144,9 +154,8 @@ export default function Contact() {
 
               <motion.button
                 type="submit"
-                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="relative w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-medium py-4 rounded-lg flex items-center justify-center gap-3 transition-all duration-300"
+                className="relative w-full bg-white/5 border border-white/10 text-white font-medium py-4 rounded-lg flex items-center justify-center gap-3 transition-all duration-500 hover-theme-cyan"
               >
                 <span className="text-base tracking-wide">Send Message</span>
                 <Send size={18} className="opacity-70" />
