@@ -86,45 +86,49 @@ export default function Timeline() {
             My Journey
           </h2>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-cyan-400 to-primary opacity-30" />
-
-            <div className="space-y-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="space-y-8">
               {events.map((event, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  initial={{ opacity: 0, x: -50 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.1 + index * 0.1 }}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } gap-8`}
+                  className="relative"
                 >
-                  {/* Content card */}
-                  <motion.div
-                    whileHover={{ scale: 1.05, rotateY: index % 2 === 0 ? 5 : -5 }}
-                    className="flex-1 glass p-6 rounded-2xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500"
-                    style={{ transformStyle: 'preserve-3d' }}
-                  >
-                    <div className={`inline-block px-4 py-1 rounded-full text-sm font-bold mb-3 bg-gradient-to-r ${getEventColor(event.type)} text-white`}>
-                      {event.year}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
-                    <p className="text-gray-400">{event.description}</p>
-                  </motion.div>
+                  <div className="flex gap-6 items-start">
+                    {/* Icon Circle */}
+                    <motion.div
+                      whileHover={{ scale: 1.15, rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                      className={`flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br ${getEventColor(event.type)} flex items-center justify-center text-white shadow-lg z-10 relative`}
+                      style={{ boxShadow: '0 0 20px rgba(45, 212, 191, 0.3)' }}
+                    >
+                      {event.icon}
+                    </motion.div>
 
-                  {/* Center icon */}
-                  <motion.div
-                    whileHover={{ scale: 1.2, rotate: 360 }}
-                    transition={{ duration: 0.5 }}
-                    className={`w-16 h-16 rounded-full bg-gradient-to-br ${getEventColor(event.type)} flex items-center justify-center text-white shadow-lg shadow-primary/50 z-10`}
-                  >
-                    {event.icon}
-                  </motion.div>
+                    {/* Content Card */}
+                    <motion.div
+                      whileHover={{ scale: 1.02, x: 5 }}
+                      className="flex-1 glass p-6 rounded-2xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300"
+                    >
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <span className={`px-4 py-1 rounded-full text-sm font-bold bg-gradient-to-r ${getEventColor(event.type)} text-white shadow-lg`}>
+                          {event.year}
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary border border-primary/30">
+                          {event.type.toUpperCase()}
+                        </span>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-2 text-white">{event.title}</h3>
+                      <p className="text-gray-400 leading-relaxed">{event.description}</p>
+                    </motion.div>
+                  </div>
 
-                  {/* Spacer for alignment */}
-                  <div className="flex-1 hidden md:block" />
+                  {/* Connector Line */}
+                  {index < events.length - 1 && (
+                    <div className="absolute left-8 top-16 w-0.5 h-8 bg-gradient-to-b from-primary/50 to-transparent" />
+                  )}
                 </motion.div>
               ))}
             </div>

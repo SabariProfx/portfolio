@@ -2,42 +2,48 @@
 
 @layer base {
   body {
-    background-color: #0f1724;
-    color: #e6eef6;
+    background-color: #0a0e1a;
+    color: #e1e7ef;
     font-family: 'Sora', system-ui, -apple-system, sans-serif;
     margin: 0;
     padding: 0;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.8;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
   
   h1 {
-    font-weight: 800;
+    font-weight: 700;
   }
 }
 
 @layer utilities {
-  .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .glass-minimal {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
   
-  .glow-text {
-    text-shadow: 0 0 20px rgba(45, 212, 191, 0.5);
+  .glow-text-subtle {
+    text-shadow: 0 0 40px rgba(45, 212, 191, 0.15);
   }
   
-  .gradient-text {
-    background: linear-gradient(135deg, #2dd4bf 0%, #06b6d4 100%);
+  .gradient-text-elegant {
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  .border-elegant {
+    border: 1px solid rgba(148, 163, 184, 0.1);
   }
 }
 
@@ -46,18 +52,18 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b1220;
+  background: #0a0e1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2dd4bf;
-  border-radius: 5px;
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
+  background: rgba(148, 163, 184, 0.5);
 }

@@ -14,33 +14,17 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80">
-              {/* Animated border effect */}
-              <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-cyan-400 to-primary opacity-75 blur-xl"
-                animate={{
-                  rotate: 360,
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                }}
-              />
+            <div className="relative w-64 h-64 md:w-72 md:h-72">
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 rounded-full bg-white/5 blur-2xl" />
               
-              {/* Profile photo - Add your image here */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/50 bg-gradient-to-br from-primary/20 to-cyan-500/20 backdrop-blur-sm">
-                {/* Placeholder - Replace with your image */}
-                <div className="w-full h-full flex items-center justify-center text-6xl font-bold gradient-text">
-                  S
-                </div>
-                {/* To use your photo, uncomment this and add your image to public folder:
+              {/* Profile photo */}
+              <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10 shadow-2xl shadow-black/50 bg-gradient-to-br from-white/5 to-white/10">
                 <img 
-                  src="/your-photo.jpg" 
+                  src="/profile.jpg" 
                   alt="Sabarinathan" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale-[30%]"
                 />
-                */}
               </div>
             </div>
           </motion.div>
@@ -50,10 +34,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center md:text-left"
+            className="text-center md:text-left max-w-2xl"
           >
             <motion.h1
-              className="text-6xl md:text-8xl font-bold mb-6 glow-text"
+              className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight"
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -61,7 +45,7 @@ export default function Hero() {
               Sabarinathan
             </motion.h1>
             
-            <div className="text-2xl md:text-4xl mb-8 h-20 gradient-text font-semibold">
+            <div className="text-xl md:text-3xl mb-8 h-16 text-white/60 font-light">
               <TypeAnimation
                 sequence={[
                   'Full Stack Developer',
@@ -80,7 +64,7 @@ export default function Hero() {
             </div>
 
             <motion.p
-              className="text-xl md:text-2xl text-gray-300 mb-4"
+              className="text-base md:text-lg text-white/50 mb-3 font-light"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -89,7 +73,7 @@ export default function Hero() {
             </motion.p>
             
             <motion.p
-              className="text-lg text-gray-400 mb-12"
+              className="text-sm text-white/40 mb-12 font-light"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
@@ -98,20 +82,20 @@ export default function Hero() {
             </motion.p>
 
             <motion.div
-              className="flex gap-6 justify-center md:justify-start"
+              className="flex gap-4 justify-center md:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
             >
               <a
                 href="#projects"
-                className="glass px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-dark transition-all duration-300 transform hover:scale-105 animate-glow"
+                className="glass-minimal px-6 py-3 rounded-lg text-sm font-light hover:bg-white/10 transition-all duration-300 border-elegant"
               >
-                View My Work
+                View Work
               </a>
               <a
                 href="#contact"
-                className="bg-primary text-dark px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
+                className="bg-white text-black px-6 py-3 rounded-lg text-sm font-medium hover:bg-white/90 transition-all duration-300"
               >
                 Get In Touch
               </a>
@@ -122,10 +106,10 @@ export default function Hero() {
 
       <motion.div
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
+        animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <ChevronDown size={40} className="text-primary" />
+        <ChevronDown size={32} className="text-white/30" />
       </motion.div>
     </section>
   );
