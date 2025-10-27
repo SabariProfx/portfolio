@@ -108,36 +108,36 @@ export default function Contact() {
               className="glass p-8 rounded-2xl space-y-6"
             >
               <div>
-                <label className="block text-sm font-semibold mb-2">Name</label>
+                <label className="block text-sm font-semibold mb-2 text-gray-300">Your Name</label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-darker rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                  placeholder="Your name"
+                  className="w-full px-4 py-3 bg-darker/80 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-white placeholder-gray-500"
+                  placeholder="Enter your name"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2">Email</label>
+                <label className="block text-sm font-semibold mb-2 text-gray-300">Email Address</label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-darker rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                  className="w-full px-4 py-3 bg-darker/80 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-white placeholder-gray-500"
                   placeholder="your@email.com"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2">Message</label>
+                <label className="block text-sm font-semibold mb-2 text-gray-300">Your Message</label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 bg-darker rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all h-32 resize-none"
-                  placeholder="Your message..."
+                  className="w-full px-4 py-3 bg-darker/80 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all h-32 resize-none text-white placeholder-gray-500"
+                  placeholder="Tell me about your project or just say hi..."
                   required
                 />
               </div>
@@ -146,7 +146,7 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full bg-primary text-dark font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all duration-300"
+                className="w-full bg-primary text-dark font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all duration-300 shadow-lg shadow-primary/30"
               >
                 <span>Send Message</span>
                 <Send size={20} />
